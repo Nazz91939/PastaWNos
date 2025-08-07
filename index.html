@@ -3,107 +3,458 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pasta W nos - Menu</title>
+  <title>Pasta W nos - Authentic Italian Pasta</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Lobster&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <canvas id="particles"></canvas>
-  <header>
-    <div class="logo">
-      <img src="Images/LogoPasta.jpg" alt="Pasta W nos Logo">
-      <h1>Pasta W nos</h1>
+  
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="Images/LogoPasta.jpg" alt="Pasta W nos Logo">
+        <span>Pasta W nos</span>
+      </div>
+      <div class="nav-menu">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-    <div class="contact">
-      <span class="phone" style="font-size:2rem;font-weight:bold;display:flex;align-items:center;gap:0.5rem;">📞 71724795</span>
-      <span class="location" style="font-size:1.2rem;font-weight:bold;display:flex;align-items:center;gap:0.5rem;">📍 Haykalieh/ behind Haykal emergency</span>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <!-- Decorative background elements -->
+    <div class="hero-bg-elements">
+      <div class="floating-particle particle-1"></div>
+      <div class="floating-particle particle-2"></div>
+      <div class="floating-particle particle-3"></div>
+      <div class="floating-particle particle-4"></div>
+      <div class="floating-particle particle-5"></div>
+      <div class="floating-particle particle-6"></div>
+      <div class="floating-particle particle-7"></div>
+      <div class="floating-particle particle-8"></div>
     </div>
-  </header>
-  <main>
-    <section class="menu-section">
-      <h2>MENU</h2>
-      <h3>PASTA</h3>
-      <div class="menu-list">
-        <div class="menu-item">
-          <h4>Curry</h4>
-          <p class="desc">White sauce, Mozzarella, Cheddar sauce, Cheddar powder, Special spices</p>
-          <div class="prices"><span>Small 250 LBP</span> <span>Medium 300 LBP</span> <span>Large 450 LBP</span></div>
+    
+    <div class="hero-content">
+      <h1 class="hero-title">Authentic Italian Pasta</h1>
+      <p class="hero-subtitle">Experience the taste of Italy with our handcrafted pasta dishes</p>
+      
+      <div class="hero-features">
+        <div class="feature-tag">
+          <i class="fas fa-star"></i>
+          <span>Fresh Ingredients</span>
         </div>
-        <div class="menu-item">
-          <h4>4 Cheese 🧀</h4>
-          <p class="desc">White sauce, Mozzarella, Cheddar sauce, Cheddar powder, Kashkaval cheese, Special spices</p>
-          <div class="prices"><span>Small 250 LBP</span> <span>Medium 300 LBP</span> <span>Large 450 LBP</span></div>
+        <div class="feature-tag">
+          <i class="fas fa-clock"></i>
+          <span>Quick Service</span>
         </div>
-        <div class="menu-item">
-          <h4>Arabiata</h4>
-          <p class="desc">Spicy tomato sauce, Mozzarella, Special spices</p>
-          <div class="prices"><span>Small 250 LBP</span> <span>Medium 300 LBP</span> <span>Large 450 LBP</span></div>
-        </div>
-        <div class="menu-item">
-          <h4>Barbecue</h4>
-          <p class="desc">White sauce, Mozzarella, Cheddar sauce, Barbecue sauce, Special spices</p>
-          <div class="prices"><span>Small 250 LBP</span> <span>Medium 300 LBP</span> <span>Large 450 LBP</span></div>
-        </div>
-        <div class="menu-item">
-          <h4>Chicken Alfredo</h4>
-          <p class="desc">White sauce, Milk, Chicken, Mozzarella, Special spices</p>
-          <div class="prices"><span>Small 350 LBP</span> <span>Medium 400 LBP</span> <span>Large 550 LBP</span></div>
-        </div>
-        <div class="menu-item">
-          <h4>Pesto</h4>
-          <p class="desc">White sauce, Mozzarella, Cheddar sauce, Pesto, Special spices</p>
-          <div class="prices"><span>Small 250 LBP</span> <span>Medium 300 LBP</span> <span>Large 450 LBP</span></div>
-        </div>
-        <div class="menu-item">
-          <h4>Shrimp Pasta</h4>
-          <p class="desc">White sauce, Shrimp, Mozzarella, Special spices</p>
-          <div class="prices"><span>Small 350 LBP</span> <span>Medium 400 LBP</span> <span>Large 550 LBP</span></div>
-        </div>
-        <div class="menu-item">
-          <h4>Cajun</h4>
-          <p class="desc">White sauce, Mozzarella, Cheddar sauce, Cajun spices</p>
-          <div class="prices"><span>Small 250 LBP</span> <span>Medium 300 LBP</span> <span>Large 450 LBP</span></div>
-        </div>
-        <div class="menu-item">
-          <h4>Mexican</h4>
-          <p class="desc">White sauce, Mozzarella, Cheddar sauce, Mexican spices</p>
-          <div class="prices"><span>Small 250 LBP</span> <span>Medium 300 LBP</span> <span>Large 450 LBP</span></div>
-        </div>
-        <div class="menu-item">
-          <h4>Buffalo</h4>
-          <p class="desc">White sauce, Mozzarella, Cheddar sauce, Buffalo sauce</p>
-          <div class="prices"><span>Small 250 LBP</span> <span>Medium 300 LBP</span> <span>Large 450 LBP</span></div>
-        </div>
-        <div class="menu-item">
-          <h4>Tuna Pasta</h4>
-          <p class="desc">White sauce, Tuna, Mozzarella, Special spices</p>
-          <div class="prices"><span>Small 350 LBP</span> <span>Medium 400 LBP</span> <span>Large 550 LBP</span></div>
-        </div>
-        <div class="menu-item">
-          <h4>Fajita</h4>
-          <p class="desc">White sauce, Chicken, Mozzarella, Fajita spices</p>
-          <div class="prices"><span>Small 350 LBP</span> <span>Medium 400 LBP</span> <span>Large 550 LBP</span></div>
+        <div class="feature-tag">
+          <i class="fas fa-heart"></i>
+          <span>Made with Love</span>
         </div>
       </div>
-    </section>
-    <section class="menu-section">
-      <h3>CORN</h3>
-      <div class="menu-list">
-        <div class="menu-item">
-          <h4>4 Cheese</h4>
-          <div class="prices"><span>Small 250 LBP</span> <span>Medium 300 LBP</span> <span>Large 450 LBP</span></div>
+      
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">View Menu</a>
+        <a href="#contact" class="btn btn-secondary">Order Now</a>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Happy Customers</span>
         </div>
-        <div class="menu-item">
-          <h4>Barbecue</h4>
-          <div class="prices"><span>Small 250 LBP</span> <span>Medium 300 LBP</span> <span>Large 450 LBP</span></div>
+        <div class="stat-item">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Pasta Varieties</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4.9</span>
+          <span class="stat-label">Customer Rating</span>
         </div>
       </div>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2024 Pasta W nos. All rights reserved.</p>
+    </div>
+    
+    <div class="hero-image">
+      <div class="hero-pasta-bowl">
+        <div class="pulse-ring"></div>
+      </div>
+      <div class="hero-glow"></div>
+      
+      <!-- Decorative elements around the bowl -->
+      <div class="bowl-decoration bowl-decoration-1"></div>
+      <div class="bowl-decoration bowl-decoration-2"></div>
+      <div class="bowl-decoration bowl-decoration-3"></div>
+      <div class="bowl-decoration bowl-decoration-4"></div>
+      
+      <!-- Floating ingredients -->
+      <div class="floating-ingredient ingredient-1"></div>
+      <div class="floating-ingredient ingredient-2"></div>
+      <div class="floating-ingredient ingredient-3"></div>
+      <div class="floating-ingredient ingredient-4"></div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-text">Scroll to explore</div>
+      <div class="scroll-arrow">↓</div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Our Story</h2>
+          <p>At Pasta W nos, we bring the authentic flavors of Italy to your table. Our passion for pasta drives us to create the most delicious and fresh dishes using traditional recipes and the finest ingredients.</p>
+          <p>Every dish is carefully prepared with love, ensuring you experience the true taste of Italian cuisine in every bite.</p>
+          <div class="features">
+            <div class="feature">
+              <i class="fas fa-utensils"></i>
+              <h3>Fresh Ingredients</h3>
+              <p>Only the finest and freshest ingredients</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-clock"></i>
+              <h3>Quick Service</h3>
+              <p>Fast and efficient service for your convenience</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-heart"></i>
+              <h3>Made with Love</h3>
+              <p>Every dish prepared with passion and care</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="Images/LogoPasta.jpg" alt="Our Kitchen">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Menu</h2>
+        <p>Discover our delicious pasta creations</p>
+      </div>
+      
+      <div class="menu-categories">
+        <button class="category-btn active" data-category="pasta">Pasta</button>
+        <button class="category-btn" data-category="corn">Corn</button>
+        <button class="category-btn" data-category="extras">Extras</button>
+        <button class="category-btn" data-category="appetizers">Appetizers</button>
+      </div>
+
+      <!-- Pasta Menu -->
+      <div class="menu-grid" id="pasta-menu">
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>4 Cheese 🧀</h3>
+          </div>
+          <p class="menu-description">White sauce, Mozzarella, Cheddar sauce, Cheddar powder, Kashkaval cheese, Special spices</p>
+          <div class="menu-sizes">
+            <span>Small 300,000 LBP</span>
+            <span>Medium 350,000 LBP</span>
+            <span>Large 400,000 LBP</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Curry</h3>
+          </div>
+          <p class="menu-description">White sauce, Mozzarella, Cheddar sauce, Cheddar powder, Special spices</p>
+          <div class="menu-sizes">
+            <span>Small 300,000 LBP</span>
+            <span>Medium 350,000 LBP</span>
+            <span>Large 400,000 LBP</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Arabiata</h3>
+          </div>
+          <p class="menu-description">Spicy tomato sauce, Mozzarella, Special spices</p>
+          <div class="menu-sizes">
+            <span>Small 300,000 LBP</span>
+            <span>Medium 350,000 LBP</span>
+            <span>Large 400,000 LBP</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Barbecue</h3>
+          </div>
+          <p class="menu-description">White sauce, Mozzarella, Cheddar sauce, Barbecue sauce, Special spices</p>
+          <div class="menu-sizes">
+            <span>Small 300,000 LBP</span>
+            <span>Medium 350,000 LBP</span>
+            <span>Large 400,000 LBP</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Chicken Alfredo</h3>
+          </div>
+          <p class="menu-description">White sauce, Milk, Chicken, Mozzarella, Special spices</p>
+          <div class="menu-sizes">
+            <span>Small 350,000 LBP</span>
+            <span>Medium 400,000 LBP</span>
+            <span>Large 550,000 LBP</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Pesto</h3>
+          </div>
+          <p class="menu-description">White sauce, Mozzarella, Cheddar sauce, Pesto, Special spices</p>
+          <div class="menu-sizes">
+            <span>Small 300,000 LBP</span>
+            <span>Medium 350,000 LBP</span>
+            <span>Large 400,000 LBP</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Shrimp Pasta</h3>
+          </div>
+          <p class="menu-description">White sauce, Shrimp, Mozzarella, Special spices</p>
+          <div class="menu-sizes">
+            <span>Small 350,000 LBP</span>
+            <span>Medium 400,000 LBP</span>
+            <span>Large 550,000 LBP</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Cajun</h3>
+          </div>
+          <p class="menu-description">White sauce, Mozzarella, Cheddar sauce, Cajun spices</p>
+          <div class="menu-sizes">
+            <span>Small 300,000 LBP</span>
+            <span>Medium 350,000 LBP</span>
+            <span>Large 400,000 LBP</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Mexican</h3>
+          </div>
+          <p class="menu-description">White sauce, Mozzarella, Cheddar sauce, Mexican spices</p>
+          <div class="menu-sizes">
+            <span>Small 300,000 LBP</span>
+            <span>Medium 350,000 LBP</span>
+            <span>Large 400,000 LBP</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Buffalo</h3>
+          </div>
+          <p class="menu-description">White sauce, Mozzarella, Cheddar sauce, Buffalo sauce</p>
+          <div class="menu-sizes">
+            <span>Small 300,000 LBP</span>
+            <span>Medium 350,000 LBP</span>
+            <span>Large 400,000 LBP</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Fajita</h3>
+          </div>
+          <p class="menu-description">White sauce, Chicken, Mozzarella, Fajita spices</p>
+          <div class="menu-sizes">
+            <span>Small 350,000 LBP</span>
+            <span>Medium 400,000 LBP</span>
+            <span>Large 550,000 LBP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Corn Menu -->
+      <div class="menu-grid hidden" id="corn-menu">
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>4 Cheese</h3>
+          </div>
+          <p class="menu-description">White sauce, Mozzarella, Cheddar sauce, Cheddar powder, Kashkaval cheese, Special spices</p>
+          <div class="menu-sizes">
+            <span>Small 300,000 LBP</span>
+            <span>Medium 350,000 LBP</span>
+            <span>Large 400,000 LBP</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Barbecue</h3>
+          </div>
+          <p class="menu-description">White sauce, Mozzarella, Cheddar sauce, Barbecue sauce, Special spices</p>
+          <div class="menu-sizes">
+            <span>Small 300,000 LBP</span>
+            <span>Medium 350,000 LBP</span>
+            <span>Large 400,000 LBP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extras Section -->
+      <div class="menu-grid hidden" id="extras-menu">
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Cheddar</h3>
+            <span class="price">50,000 LBP</span>
+          </div>
+          <p class="menu-description">Extra cheddar cheese topping</p>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Mozzarella</h3>
+            <span class="price">50,000 LBP</span>
+          </div>
+          <p class="menu-description">Extra mozzarella cheese topping</p>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Chips</h3>
+            <span class="price">50,000 LBP</span>
+          </div>
+          <p class="menu-description">Side of crispy chips</p>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Parmesan</h3>
+            <span class="price">50,000 LBP</span>
+          </div>
+          <p class="menu-description">Extra parmesan cheese topping</p>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Chicken</h3>
+            <span class="price">100,000 LBP</span>
+          </div>
+          <p class="menu-description">Extra chicken topping</p>
+        </div>
+      </div>
+
+      <!-- Appetizers Section -->
+      <div class="menu-grid hidden" id="appetizers-menu">
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Fries</h3>
+          </div>
+          <p class="menu-description">Crispy golden fries</p>
+          <div class="menu-sizes">
+            <span>Small 200,000 LBP</span>
+            <span>Medium 300,000 LBP</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Cheeseballs</h3>
+          </div>
+          <p class="menu-description">Delicious cheese balls</p>
+          <div class="menu-sizes">
+            <span>3 PCS 200,000 LBP</span>
+            <span>5 PCS 350,000 LBP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contact Us</h2>
+        <p>Visit us or call to place your order</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h3>Phone</h3>
+              <p>71724795</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h3>Location</h3>
+              <p>Haykalieh/ behind Haykal emergency</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h3>Hours</h3>
+              <p>Open daily for lunch and dinner</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-cta">
+          <h3>Ready to Order?</h3>
+          <p>Call us now to place your order and enjoy our delicious pasta!</p>
+          <a href="tel:71724795" class="btn btn-primary">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="Images/LogoPasta.jpg" alt="Pasta W nos Logo">
+          <h3>Pasta W nos</h3>
+          <p>Authentic Italian Pasta</p>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#menu">Menu</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Pasta W nos. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
+
   <script src="particles.js"></script>
+  <script src="script.js"></script>
 </body>
 </html> 
