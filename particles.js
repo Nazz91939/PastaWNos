@@ -1,8 +1,8 @@
-const particleColors = ['#d4af37', '#8b4513', '#a0522d', '#cd853f', '#daa520'];
-const particleCount = 25;
+const particleColors = ['#d4af37', '#8b4513'];
+const particleCount = 8;
 const minSize = 1;
-const maxSize = 4;
-const speedRange = [0.05, 0.2];
+const maxSize = 2;
+const speedRange = [0.02, 0.08];
 
 function randomBetween(a, b) {
   return a + Math.random() * (b - a);
@@ -104,7 +104,7 @@ function setupParticleCanvas() {
   canvas.style.height = '100%';
   canvas.style.zIndex = '-1';
   canvas.style.pointerEvents = 'none';
-  canvas.style.opacity = '0.4';
+  canvas.style.opacity = '0.15';
 
   function setCanvasSize() {
     canvas.width = window.innerWidth;
