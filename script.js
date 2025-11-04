@@ -23,10 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // Menu Category Switching
 document.addEventListener('DOMContentLoaded', function() {
     const categoryBtns = document.querySelectorAll('.category-btn');
-    const pastaMenu = document.getElementById('pasta-menu');
-    const cornMenu = document.getElementById('corn-menu');
-    const extrasMenu = document.getElementById('extras-menu');
-    const appetizersMenu = document.getElementById('appetizers-menu');
+    const menus = {
+        pasta: document.getElementById('pasta-menu'),
+        extras: document.getElementById('extras-menu'),
+        appetizers: document.getElementById('appetizers-menu')
+    };
     
     categoryBtns.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -39,20 +40,16 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
             
             // Hide all menus first
-            pastaMenu.classList.add('hidden');
-            cornMenu.classList.add('hidden');
-            extrasMenu.classList.add('hidden');
-            appetizersMenu.classList.add('hidden');
-            
-            // Show appropriate menu
-            if (category === 'pasta') {
-                pastaMenu.classList.remove('hidden');
-            } else if (category === 'corn') {
-                cornMenu.classList.remove('hidden');
-            } else if (category === 'extras') {
-                extrasMenu.classList.remove('hidden');
-            } else if (category === 'appetizers') {
-                appetizersMenu.classList.remove('hidden');
+            Object.values(menus).forEach(menu => {
+                if (menu) {
+                    menu.classList.add('hidden');
+                }
+            });
+
+            // Show appropriate menu if it exists
+            const targetMenu = menus[category];
+            if (targetMenu) {
+                targetMenu.classList.remove('hidden');
             }
         });
     });
