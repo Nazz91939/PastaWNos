@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pasta W nos - Authentic Italian Pasta</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <canvas id="particles"></canvas>
-  
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
@@ -34,71 +32,122 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <!-- Decorative background elements -->
-    <div class="hero-bg-elements">
-      <div class="floating-particle particle-1"></div>
-      <div class="floating-particle particle-2"></div>
+    <!-- Particle canvas background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Cinematic background layers -->
+    <div class="hero-atmosphere">
+      <div class="hero-gradient-overlay"></div>
+      <div class="hero-light-rays">
+        <div class="light-ray ray-1"></div>
+        <div class="light-ray ray-2"></div>
+        <div class="light-ray ray-3"></div>
+      </div>
+      <div class="hero-grain"></div>
     </div>
-    
-    <div class="hero-content">
-      <h1 class="hero-title">Authentic Italian Pasta</h1>
-      <p class="hero-subtitle">Experience the taste of Italy with our handcrafted pasta dishes</p>
-      
-      <div class="hero-features">
-        <div class="feature-tag">
-          <i class="fas fa-star"></i>
-          <span>Fresh Ingredients</span>
+
+    <!-- Floating golden particles -->
+    <div class="hero-particles">
+      <span class="gold-particle"></span>
+      <span class="gold-particle"></span>
+      <span class="gold-particle"></span>
+      <span class="gold-particle"></span>
+      <span class="gold-particle"></span>
+    </div>
+
+    <div class="hero-container">
+      <div class="hero-content">
+        <!-- Elegant tagline -->
+        <div class="hero-tagline">
+          <span class="tagline-line"></span>
+          <span class="tagline-text">Est. 2024 · Haykalieh</span>
+          <span class="tagline-line"></span>
         </div>
-        <div class="feature-tag">
-          <i class="fas fa-clock"></i>
-          <span>Quick Service</span>
+
+        <!-- Dramatic split title -->
+        <h1 class="hero-title">
+          <span class="title-word title-word-1">Pasta</span>
+          <span class="title-word title-word-2">W nos</span>
+        </h1>
+
+        <!-- Elegant subtitle -->
+        <p class="hero-subtitle">
+          <span class="subtitle-italic">Handcrafted with passion,</span>
+          <span class="subtitle-bold">served with soul</span>
+        </p>
+
+        <!-- Signature divider -->
+        <div class="hero-divider">
+          <span class="divider-ornament">✦</span>
         </div>
-        <div class="feature-tag">
+
+        <!-- Action buttons -->
+        <div class="hero-buttons">
+          <a href="#menu" class="btn btn-primary">
+            <span class="btn-text">Explore Menu</span>
+            <span class="btn-icon">→</span>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <span class="btn-text">Order Now</span>
+          </a>
+        </div>
+
+        <!-- Minimal elegant stats -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-count="500">500+</span>
+            <span class="stat-divider"></span>
+            <span class="stat-label">Happy Guests</span>
+          </div>
+          <div class="stat-separator">·</div>
+          <div class="stat-item">
+            <span class="stat-number">15+</span>
+            <span class="stat-divider"></span>
+            <span class="stat-label">Signature Dishes</span>
+          </div>
+          <div class="stat-separator">·</div>
+          <div class="stat-item">
+            <span class="stat-number">4.9</span>
+            <span class="stat-divider"></span>
+            <span class="stat-label">Rating</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual centerpiece -->
+      <div class="hero-visual">
+        <div class="visual-frame">
+          <div class="frame-corner frame-tl"></div>
+          <div class="frame-corner frame-tr"></div>
+          <div class="frame-corner frame-bl"></div>
+          <div class="frame-corner frame-br"></div>
+
+          <div class="visual-content">
+            <div class="logo-showcase">
+              <img src="Images/LogoPasta.jpg" alt="Pasta W nos" class="showcase-logo">
+              <div class="logo-glow"></div>
+            </div>
+            <div class="visual-ring ring-1"></div>
+            <div class="visual-ring ring-2"></div>
+          </div>
+        </div>
+
+        <!-- Floating feature badges -->
+        <div class="floating-badge badge-1">
+          <i class="fas fa-leaf"></i>
+          <span>Fresh Daily</span>
+        </div>
+        <div class="floating-badge badge-2">
           <i class="fas fa-heart"></i>
           <span>Made with Love</span>
         </div>
       </div>
-      
-      <div class="hero-buttons">
-        <a href="#menu" class="btn btn-primary">View Menu</a>
-        <a href="#contact" class="btn btn-secondary">Order Now</a>
-      </div>
-      
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-number">500+</span>
-          <span class="stat-label">Happy Customers</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">15+</span>
-          <span class="stat-label">Pasta Varieties</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">4.9</span>
-          <span class="stat-label">Customer Rating</span>
-        </div>
-      </div>
     </div>
-    
-    <div class="hero-image">
-      <div class="hero-pasta-bowl">
-        <div class="pulse-ring"></div>
-      </div>
-      <div class="hero-glow"></div>
-      
-      <!-- Decorative elements around the bowl -->
-      <div class="bowl-decoration bowl-decoration-1"></div>
-      <div class="bowl-decoration bowl-decoration-2"></div>
-      
-      <!-- Floating ingredients -->
-      <div class="floating-ingredient ingredient-1"></div>
-      <div class="floating-ingredient ingredient-2"></div>
-    </div>
-    
+
     <!-- Scroll indicator -->
     <div class="scroll-indicator">
-      <div class="scroll-text">Scroll to explore</div>
-      <div class="scroll-arrow">↓</div>
+      <div class="scroll-line"></div>
+      <span class="scroll-text">Scroll</span>
     </div>
   </section>
 

@@ -169,81 +169,36 @@ style.textContent = `
     }
     
     /* Hero section enhanced animations */
-    .hero-title.animate-in {
-        animation: titleReveal 1.5s ease-out forwards;
+    .hero-visual.animate-in {
+        animation: visualRevealJS 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
-    
-    @keyframes titleReveal {
+
+    @keyframes visualRevealJS {
         0% {
             opacity: 0;
-            transform: translateY(-50px) scale(0.8);
-        }
-        50% {
-            opacity: 0.5;
-            transform: translateY(-25px) scale(0.9);
+            transform: scale(0.8) rotate(-5deg);
         }
         100% {
             opacity: 1;
-            transform: translateY(0) scale(1);
+            transform: scale(1) rotate(0);
         }
     }
-    
-    .hero-subtitle.animate-in {
-        animation: subtitleSlide 1s ease-out 0.3s both;
+
+    .hero-content.animate-in .title-word {
+        animation: titleWordReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
-    
-    @keyframes subtitleSlide {
+
+    @keyframes titleWordReveal {
         from {
             opacity: 0;
-            transform: translateX(-30px);
+            transform: translateY(40px);
+            filter: blur(8px);
         }
         to {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
+            filter: blur(0);
         }
-    }
-    
-    .hero-buttons.animate-in {
-        animation: buttonsPop 0.8s ease-out 0.6s both;
-    }
-    
-    @keyframes buttonsPop {
-        0% {
-            opacity: 0;
-            transform: scale(0.5);
-        }
-        50% {
-            transform: scale(1.1);
-        }
-        100% {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-    
-    .hero-pasta-bowl.animate-in {
-        animation: bowlFloat 1.2s ease-out 0.9s both;
-    }
-    
-    @keyframes bowlFloat {
-        0% {
-            opacity: 0;
-            transform: translateY(50px) rotate(180deg);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0) rotate(0deg);
-        }
-    }
-    
-    /* Cursor blink animation for typing effect */
-    @keyframes blink {
-        0%, 50% { border-color: #d4af37; }
-        51%, 100% { border-color: transparent; }
-    }
-    
-    .hero-title.typing {
-        animation: blink 1s infinite;
     }
 `;
 document.head.appendChild(style);
@@ -253,76 +208,91 @@ window.addEventListener('scroll', function() {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
     const heroContent = document.querySelector('.hero-content');
-    const heroImage = document.querySelector('.hero-image');
-    const heroTitle = document.querySelector('.hero-title');
-    
-    if (hero && heroContent) {
-        const rate = scrolled * -0.3;
-        heroContent.style.transform = `translateY(${rate}px)`;
-        
-        // Parallax for hero image
-        if (heroImage) {
-            const imageRate = scrolled * 0.2;
-            heroImage.style.transform = `translateY(${imageRate}px)`;
+    const heroVisual = document.querySelector('.hero-visual');
+    const lightRays = document.querySelector('.hero-light-rays');
+
+    if (hero && scrolled < window.innerHeight) {
+        // Subtle parallax for content
+        if (heroContent) {
+            const contentRate = scrolled * -0.2;
+            heroContent.style.transform = `translateY(${contentRate}px)`;
+            heroContent.style.opacity = Math.max(0, 1 - scrolled * 0.002);
         }
-        
-        // Scale effect for title on scroll
-        if (heroTitle) {
-            const scale = Math.max(0.8, 1 - scrolled * 0.0005);
-            heroTitle.style.transform = `scale(${scale})`;
+
+        // Parallax for visual
+        if (heroVisual) {
+            const visualRate = scrolled * 0.15;
+            heroVisual.style.transform = `translateY(${visualRate}px)`;
+        }
+
+        // Light rays intensity
+        if (lightRays) {
+            const rayOpacity = Math.max(0.2, 0.4 - scrolled * 0.001);
+            lightRays.style.opacity = rayOpacity;
         }
     }
 });
 
-// Add typing effect to hero title
+// Staggered reveal for hero title words
 document.addEventListener('DOMContentLoaded', function() {
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const text = heroTitle.textContent;
-        heroTitle.textContent = '';
-        heroTitle.style.borderRight = '2px solid #d4af37';
-        
-        let i = 0;
-        const typeWriter = () => {
-            if (i < text.length) {
-                heroTitle.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            } else {
-                // Remove cursor after typing is complete
-                setTimeout(() => {
-                    heroTitle.style.borderRight = 'none';
-                }, 1000);
-            }
-        };
-        
-        // Start typing effect after a short delay
-        setTimeout(typeWriter, 500);
-    }
+    const titleWords = document.querySelectorAll('.title-word');
+    titleWords.forEach((word, index) => {
+        word.style.opacity = '0';
+        word.style.transform = 'translateY(60px)';
+        word.style.filter = 'blur(10px)';
+
+        setTimeout(() => {
+            word.style.transition = 'all 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
+            word.style.opacity = '1';
+            word.style.transform = 'translateY(0)';
+            word.style.filter = 'blur(0)';
+        }, 400 + (index * 200));
+    });
 });
 
 // Add mouse movement effect to hero section
 document.addEventListener('DOMContentLoaded', function() {
     const hero = document.querySelector('.hero');
-    const heroPastaBowl = document.querySelector('.hero-pasta-bowl');
-    
-    if (hero && heroPastaBowl) {
+    const logoShowcase = document.querySelector('.logo-showcase');
+    const visualRings = document.querySelectorAll('.visual-ring');
+    const floatingBadges = document.querySelectorAll('.floating-badge');
+
+    if (hero && logoShowcase) {
         hero.addEventListener('mousemove', function(e) {
             const rect = hero.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
-            const moveX = (x - centerX) / centerX * 10;
-            const moveY = (y - centerY) / centerY * 10;
-            
-            heroPastaBowl.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${moveX * 2}deg)`;
+
+            const moveX = (x - centerX) / centerX * 15;
+            const moveY = (y - centerY) / centerY * 15;
+
+            // Subtle logo movement
+            logoShowcase.style.transform = `translate(${moveX * 0.5}px, ${moveY * 0.5}px)`;
+
+            // Rings move in opposite direction for depth
+            visualRings.forEach((ring, index) => {
+                const factor = (index + 1) * 0.3;
+                ring.style.transform = `translate(${-moveX * factor}px, ${-moveY * factor}px) rotate(${moveX}deg)`;
+            });
+
+            // Floating badges subtle movement
+            floatingBadges.forEach((badge, index) => {
+                const factor = index === 0 ? 0.4 : -0.4;
+                badge.style.transform = `translate(${moveX * factor}px, ${moveY * factor}px)`;
+            });
         });
-        
+
         hero.addEventListener('mouseleave', function() {
-            heroPastaBowl.style.transform = 'translate(0, 0) rotate(0deg)';
+            logoShowcase.style.transform = 'translate(0, 0)';
+            visualRings.forEach(ring => {
+                ring.style.transform = 'translate(0, 0) rotate(0deg)';
+            });
+            floatingBadges.forEach(badge => {
+                badge.style.transform = 'translate(0, 0)';
+            });
         });
     }
 });
@@ -343,7 +313,7 @@ const scrollObserver = new IntersectionObserver(function(entries) {
 
 // Observe hero elements for scroll animations
 document.addEventListener('DOMContentLoaded', function() {
-    const heroElements = document.querySelectorAll('.hero-title, .hero-subtitle, .hero-buttons, .hero-pasta-bowl');
+    const heroElements = document.querySelectorAll('.hero-content, .hero-visual');
     heroElements.forEach(el => {
         scrollObserver.observe(el);
     });
