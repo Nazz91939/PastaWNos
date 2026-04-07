@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menus = {
         pasta: document.getElementById('pasta-menu'),
         extras: document.getElementById('extras-menu'),
+        hotdogs: document.getElementById('hotdogs-menu'),
         appetizers: document.getElementById('appetizers-menu')
     };
     
