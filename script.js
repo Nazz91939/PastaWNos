@@ -51,6 +51,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetMenu = menus[category];
             if (targetMenu) {
                 targetMenu.classList.remove('hidden');
+                // Re-trigger fade-in animation for newly visible cards
+                const cards = targetMenu.querySelectorAll('.menu-card');
+                cards.forEach((card, index) => {
+                    card.style.opacity = '0';
+                    card.style.animation = 'none';
+                    // Force reflow then re-apply animation
+                    card.offsetHeight;
+                    card.style.animationDelay = `${index * 0.1}s`;
+                    card.style.animation = 'fadeInUp 0.6s ease forwards';
+                });
             }
         });
     });
